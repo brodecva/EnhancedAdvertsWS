@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?><xs:schema xmlns:tns="http://published.adverts.ws.brodecva.ms.mff.cuni.cz/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://published.adverts.ws.brodecva.ms.mff.cuni.cz/" version="1.0">
+<xs:element name="Advert" type="tns:advert"/>
+<xs:element name="getAdvert" type="tns:getAdvert"/>
+<xs:element name="getAdvertResponse" type="tns:getAdvertResponse"/>
+<xs:element name="listPublished" type="tns:listPublished"/>
+<xs:element name="listPublishedResponse" type="tns:listPublishedResponse"/>
+<xs:element name="searchEmail" type="tns:searchEmail"/>
+<xs:element name="searchEmailResponse" type="tns:searchEmailResponse"/>
+<xs:element name="searchPhone" type="tns:searchPhone"/>
+<xs:element name="searchPhoneResponse" type="tns:searchPhoneResponse"/>
+<xs:element name="searchTags" type="tns:searchTags"/>
+<xs:element name="searchTagsResponse" type="tns:searchTagsResponse"/>
+<xs:complexType name="searchPhone">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="searchPhoneResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:advert"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="advert">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="email" type="xs:string"/>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="latitude" type="xs:double"/>
+      <xs:element name="longitude" type="xs:double"/>
+      <xs:element minOccurs="0" name="phone" type="xs:string"/>
+      <xs:element minOccurs="0" name="published" type="xs:dateTime"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tags" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="text" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="listPublished">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="listPublishedResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:advert"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="searchEmail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="searchEmailResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:advert"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAdvert">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getAdvertResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:advert"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="searchTags">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="searchTagsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:advert"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

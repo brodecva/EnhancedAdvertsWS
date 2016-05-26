@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="AdvertService" targetNamespace="http://published.adverts.ws.brodecva.ms.mff.cuni.cz/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://published.adverts.ws.brodecva.ms.mff.cuni.cz/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://published.adverts.ws.brodecva.ms.mff.cuni.cz/" schemaLocation="advertserviceimpl_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="searchEmailResponse">
+    <wsdl:part name="parameters" element="tns:searchEmailResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listPublished">
+    <wsdl:part name="parameters" element="tns:listPublished">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchEmail">
+    <wsdl:part name="parameters" element="tns:searchEmail">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAdvert">
+    <wsdl:part name="parameters" element="tns:getAdvert">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAdvertResponse">
+    <wsdl:part name="parameters" element="tns:getAdvertResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchPhone">
+    <wsdl:part name="parameters" element="tns:searchPhone">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listPublishedResponse">
+    <wsdl:part name="parameters" element="tns:listPublishedResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchTags">
+    <wsdl:part name="parameters" element="tns:searchTags">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchTagsResponse">
+    <wsdl:part name="parameters" element="tns:searchTagsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchPhoneResponse">
+    <wsdl:part name="parameters" element="tns:searchPhoneResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AdvertService">
+    <wsdl:operation name="searchPhone">
+      <wsdl:input name="searchPhone" message="tns:searchPhone">
+    </wsdl:input>
+      <wsdl:output name="searchPhoneResponse" message="tns:searchPhoneResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listPublished">
+      <wsdl:input name="listPublished" message="tns:listPublished">
+    </wsdl:input>
+      <wsdl:output name="listPublishedResponse" message="tns:listPublishedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchEmail">
+      <wsdl:input name="searchEmail" message="tns:searchEmail">
+    </wsdl:input>
+      <wsdl:output name="searchEmailResponse" message="tns:searchEmailResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAdvert">
+      <wsdl:input name="getAdvert" message="tns:getAdvert">
+    </wsdl:input>
+      <wsdl:output name="getAdvertResponse" message="tns:getAdvertResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchTags">
+      <wsdl:input name="searchTags" message="tns:searchTags">
+    </wsdl:input>
+      <wsdl:output name="searchTagsResponse" message="tns:searchTagsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AdvertServiceSoapBinding" type="tns:AdvertService">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="searchPhone">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="searchPhone">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="searchPhoneResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listPublished">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="listPublished">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listPublishedResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchEmail">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="searchEmail">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="searchEmailResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAdvert">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="getAdvert">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAdvertResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchTags">
+      <soap12:operation soapAction="" style="document"/>
+      <wsdl:input name="searchTags">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="searchTagsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AdvertService">
+    <wsdl:port name="AdvertServicePort" binding="tns:AdvertServiceSoapBinding">
+      <soap12:address location="http://localhost:8080/Adverts/services/AdvertServicePort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
